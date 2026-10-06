@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Saunas · Barrel Sauna UK</title>
+<meta name="description" content="Welsh-built sauna trailers. DVSA tested. Built to move.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#16261C; --forest-deep:#1F3D28; --forest:#2B5336; --mid:#417C51;
+  --sage:#50795F; --sage-pale:#8fae86;
+  --honey:#C08B41; --honey-d:#b07d38; --honey-l:#D6A868;
+  --ink:#3A4240; --ink-l:#5C6663; --body-dark:#dfe9df; --veil-body:#e9eee4;
+  --tint:#dbe7dd; --wa:#31D24F;
+  --hairline:rgba(65,124,81,0.30);
+  --shadow:0 10px 30px rgba(22,38,28,0.12);
+  --face:'Raleway', Arial, Helvetica, sans-serif;
+  --cdn:'https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/';
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--face);background:#ffffff;color:var(--ink-l);font-weight:400;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{display:block;max-width:100%;}
+a{color:inherit;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+.kicker{font-size:12px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--honey);margin-bottom:14px;}
+.dark .kicker{color:var(--honey-l);}
+h2{font-size:38px;font-weight:700;line-height:1.14;letter-spacing:-0.5px;color:var(--forest);margin-bottom:16px;}
+h2 span{color:var(--honey);}
+.dark h2{color:#ffffff;}
+.dark h2 span{color:var(--honey-l);}
+.lede{font-size:18px;max-width:720px;margin-bottom:14px;}
+.dark .lede, .dark p{color:var(--body-dark);}
+section{padding:80px 0;}
+section.dark{background:var(--ground);}
+
+/* pills */
+.pill{display:inline-block;background:var(--honey);color:#ffffff;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:15px 34px;border-radius:30px;}
+.pill:hover{background:var(--honey-d);}
+.pill.wa{background:var(--wa);}
+.pill.wa:hover{background:#28b843;}
+
+/* HERO */
+.hero{position:relative;min-height:86vh;display:flex;align-items:flex-end;color:#ffffff;
+  background:linear-gradient(180deg, rgba(22,38,28,0.42) 0%, rgba(22,38,28,0.18) 45%, rgba(22,38,28,0.88) 100%), url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa5a59b9f8b31b6abd27b54.jpg') center 45%/cover no-repeat, var(--forest-deep);}
+.hero .logo{position:absolute;top:28px;left:32px;width:110px;}
+.hero .inner{width:100%;padding:0 0 76px;}
+.hero .dash{width:44px;height:2px;background:var(--honey-l);margin-bottom:16px;}
+.hero .kicker{color:var(--honey-l);}
+.hero h1{font-size:54px;font-weight:700;line-height:1.06;letter-spacing:-1px;max-width:760px;margin-bottom:16px;}
+.hero h1 span{color:var(--honey-l);}
+.hero p{font-size:18px;color:var(--veil-body);max-width:600px;margin-bottom:26px;}
+
+/* trailer section */
+.headrow{display:flex;gap:34px;align-items:center;margin-bottom:34px;}
+.headrow .draw{flex:0 0 190px;}
+.blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.blocks.two{grid-template-columns:repeat(2,1fr);}
+.blocks.five{grid-template-columns:repeat(5,1fr);}
+.wblock{background:#ffffff;border:1px solid var(--hairline);border-radius:18px;box-shadow:var(--shadow);padding:22px 22px 24px;}
+.wblock .hd{font-size:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--forest);margin-bottom:6px;line-height:1.35;}
+.wblock .bd{font-size:14.5px;color:var(--ink-l);line-height:1.6;}
+
+/* labelled images */
+.imgs{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px;}
+.icard{background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.25);}
+.icard img{width:100%;height:auto;}
+.icard .tab{background:var(--forest-deep);border-top:3px solid var(--honey);color:#ffffff;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
+.icard .sub{padding:12px 18px 16px;font-size:14px;color:var(--sage);}
+
+/* changing room + circle */
+.split{display:grid;grid-template-columns:1.3fr 1fr;gap:46px;align-items:center;}
+.circ{display:flex;align-items:center;gap:24px;}
+.circ img{flex:0 0 175px;width:175px;height:175px;border-radius:50%;object-fit:cover;border:1px solid var(--hairline);}
+.circ .cap{font-size:13px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);line-height:1.7;}
+
+/* details band */
+.band{position:relative;min-height:380px;display:flex;align-items:center;color:#ffffff;
+  background:linear-gradient(90deg, rgba(22,38,28,0.88) 0%, rgba(22,38,28,0.58) 46%, rgba(22,38,28,0.80) 100%), url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa00cb4f44f6ea72fcb18fa.png') center/cover no-repeat, var(--ground);}
+.band .flag{width:44px;height:44px;border-radius:50%;overflow:hidden;margin-bottom:16px;border:2px solid rgba(255,255,255,0.6);}
+.band .flag img{width:100%;height:100%;object-fit:cover;object-position:53% 47%;}
+.band h2{font-size:36px;color:#ffffff;}
+.band h2 span{color:var(--honey-l);}
+.band p{color:var(--veil-body);font-size:15px;max-width:440px;}
+
+/* warranty */
+.wpanel{background:var(--forest);border-radius:22px;padding:34px 36px;max-width:820px;}
+.wpanel .big{font-size:40px;font-weight:700;color:var(--honey-l);line-height:1.05;margin-bottom:12px;}
+.wpanel p{color:var(--body-dark);}
+
+/* CTA */
+.cta{text-align:center;}
+.cta h2{max-width:720px;margin:0 auto 22px;}
+.cta .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* footer */
+footer{background:var(--ground);border-radius:22px 22px 0 0;padding:48px 0 0;text-align:center;}
+footer .icons{display:flex;justify-content:center;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-bottom:26px;padding:0 20px;}
+footer .icons img{height:44px;width:auto;}
+footer .logo{width:120px;margin:0 auto 14px;}
+footer .signoff{color:#ffffff;font-weight:700;font-size:16px;margin-bottom:4px;}
+footer .dom{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-pale);margin-bottom:30px;}
+footer .sigcard{background:#ffffff;max-width:720px;margin:0 auto;border-radius:18px 18px 0 0;overflow:hidden;}
+footer .sigcard img{width:100%;}
+footer .ver{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-pale);padding:18px 0 22px;}
+
+@media(max-width:900px){
+  .blocks, .blocks.five{grid-template-columns:repeat(2,1fr);}
+  .split{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .wrap{padding:0 20px;}
+  section{padding:56px 0;}
+  .hero{min-height:78vh;}
+  .hero .logo{left:20px;top:20px;width:90px;}
+  .hero h1{font-size:34px;}
+  .hero p{font-size:16px;}
+  h2, .band h2{font-size:28px;}
+  .headrow{flex-direction:column;align-items:flex-start;gap:16px;}
+  .headrow .draw{flex:none;width:150px;}
+  .blocks, .blocks.two, .blocks.five, .imgs{grid-template-columns:1fr;}
+  .circ{flex-direction:column;align-items:flex-start;}
+  .wpanel{padding:26px 24px;}
+  .wpanel .big{font-size:30px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <img class="logo" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK">
+  <div class="wrap inner">
+    <div class="dash"></div>
+    <div class="kicker">Mobile Saunas</div>
+    <h1>Welsh-built trailers. DVSA tested. Built to <span>move.</span></h1>
+    <p>Expertly manufactured entirely in-house, from frame to finish.</p>
+    <a class="pill" href="https://www.barrelsaunauk.com/book-a-call-back">Book a call back</a>
+  </div>
+</header>
+
+<!-- TRAILERS -->
+<section>
+  <div class="wrap">
+    <div class="headrow">
+      <img class="draw" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee114091fa65e6a8fa27.png" alt="Mobile sauna line drawing">
+      <div>
+        <div class="kicker">Made in house</div>
+        <h2>Our custom sauna <span>trailers</span></h2>
+        <p class="lede">Our trailers are expertly manufactured entirely in-house, encompassing everything from frame construction and assembly to galvanizing, welding, and innovative design. Each trailer is meticulously crafted to meet your specific requirements and undergoes DVSA IVA, ensuring certification for compliance on UK roads. Each unit is bespoke, designed to seamlessly integrate with our premium saunas.</p>
+      </div>
+    </div>
+    <div class="blocks five">
+      <div class="wblock"><div class="hd">Galvanised</div><div class="bd">Built for durability and corrosion resistance</div></div>
+      <div class="wblock"><div class="hd">UK IVA Tested</div><div class="bd">Certified for compliance on UK roads</div></div>
+      <div class="wblock"><div class="hd">Braking</div><div class="bd">Engineered for safe, controlled towing</div></div>
+      <div class="wblock"><div class="hd">Steel Stabilisers</div><div class="bd">Added stability when parked</div></div>
+      <div class="wblock"><div class="hd">Extra Supports</div><div class="bd">Reinforced structure for long-term strength</div></div>
+      <div class="wblock"><div class="hd">Buffalo Board Base</div><div class="bd">A robust base designed for demanding use</div></div>
+      <div class="wblock"><div class="hd">Wooden Decking</div><div class="bd">Premium finish that complements the sauna</div></div>
+      <div class="wblock"><div class="hd">Built-in Storage</div><div class="bd">Practical space for essentials and accessories</div></div>
+      <div class="wblock"><div class="hd">Lighting System</div><div class="bd">Integrated lighting for visibility and convenience</div></div>
+      <div class="wblock"><div class="hd">Larger Wheels</div><div class="bd">Improved handling and road presence</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ON THE TRAILER -->
+<section class="dark">
+  <div class="wrap">
+    <div class="kicker">On the road</div>
+    <h2>Delivered fully <span>built</span></h2>
+    <div class="imgs">
+      <div class="icard">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac1cc6f7d735ea2a10c07da.jpg" alt="Mobile barrel sauna on its trailer">
+        <div class="tab">Sauna on its trailer</div>
+        <div class="sub">Delivered fully built</div>
+      </div>
+      <div class="icard">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac1ce1cc478ac5535b2022e.jpg" alt="Barrel Sauna UK trailer">
+        <div class="tab">The trailer</div>
+        <div class="sub">Galvanised steel frame</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHANGING ROOM -->
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="kicker">The changing room</div>
+      <h2>A heat trap, a rest zone, and a <span>second room</span></h2>
+      <p class="lede">More than just a changing space.</p>
+      <div class="blocks two" style="margin-top:22px;">
+        <div class="wblock"><div class="hd">Double Door Heat Trap</div><div class="bd">Two doors between the outside and the sauna, keeps heat in and cold out. Always recommended, essential for commercial and mobile saunas.</div></div>
+        <div class="wblock"><div class="hd">Commercial &amp; Residential</div><div class="bd">Works equally well for a garden sauna at home or a hire fleet on the road.</div></div>
+        <div class="wblock"><div class="hd">Rest &amp; Recovery Space</div><div class="bd">The perfect place to cool down between sessions. Sit, breathe, go again.</div></div>
+        <div class="wblock"><div class="hd">Under-Seat Storage</div><div class="bd">Store firewood, towels, or kit neatly out of the way beneath the bench.</div></div>
+      </div>
+    </div>
+    <div class="circ">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9ffd1c641597c752ab184f.jpg" alt="Barrel Sauna UK nameplate on a door frame">
+      <div class="cap">Built in the<br>United Kingdom</div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS BAND -->
+<div class="band">
+  <div class="wrap">
+    <div class="flag"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab400c7ec718870e13b1869.png" alt="Welsh flag"></div>
+    <h2>Handbuilt in <span>Wales.</span></h2>
+    <p>Made to order. Built to last. A Welsh family business with woodworking in our blood.</p>
+  </div>
+</div>
+
+<!-- SOLAR + STEPS -->
+<section>
+  <div class="wrap">
+    <div class="kicker">Off grid</div>
+    <h2>Solar powered <span>lighting</span></h2>
+    <p class="lede">Power your entire sauna lighting system off-grid with a roof-mounted solar panel. Clean, sustainable energy that keeps your lights running without any mains connection.</p>
+    <div class="blocks" style="margin:22px 0 54px;">
+      <div class="wblock"><div class="hd">Off-Grid</div><div class="bd">No mains connection required</div></div>
+      <div class="wblock"><div class="hd">Sustainable</div><div class="bd">Clean solar energy, zero running costs</div></div>
+      <div class="wblock"><div class="hd">Fully Integrated</div><div class="bd">Powers all zones: porch, changing room &amp; sauna</div></div>
+    </div>
+    <div class="kicker">Built to match</div>
+    <h2>Custom timber <span>steps</span></h2>
+    <p class="lede">Our steps are custom-made using the same timber decking material as your sauna, so they blend in seamlessly. They simply clip onto the end of the decking, no fixings, no fuss.</p>
+    <div class="blocks" style="margin-top:22px;">
+      <div class="wblock"><div class="hd">Matching Timber</div><div class="bd">Same material as your decking for a seamless finish</div></div>
+      <div class="wblock"><div class="hd">Clip-On Design</div><div class="bd">Attaches to the end of the decking, no tools required</div></div>
+      <div class="wblock"><div class="hd">Custom Built</div><div class="bd">Made to order to suit your sauna's height and style</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WARRANTY -->
+<section class="dark">
+  <div class="wrap">
+    <div class="kicker">Warranty</div>
+    <h2>Your trailer, <span>covered</span></h2>
+    <div class="wpanel">
+      <div class="big">24 months</div>
+      <p>Where the trailer is manufactured and supplied by Barrel Sauna UK, trailer components are covered under a separate twenty-four (24) month warranty against defects in materials and workmanship.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="kicker">Your build</div>
+    <h2>Have something specific in mind? Just let us know, we're happy to <span>accommodate.</span></h2>
+    <div class="btns">
+      <a class="pill" href="https://www.barrelsaunauk.com/book-a-call-back">Book a call back</a>
+      <a class="pill wa" href="https://wa.me/447360274142">WhatsApp us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="icons">
+    <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee14bdaa5e26a969097d.png" alt="Mobile sauna">
+    <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cde8ed1c29f9e1305.png" alt="Barrel sauna">
+    <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee11bdaa5e26a9690935.png" alt="Hot tub">
+    <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cbdaa5e26a96908f0.png" alt="Double Dipper">
+    <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee11ff484614db7528f5.png" alt="Glamping pod">
+  </div>
+  <img class="logo" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK">
+  <div class="signoff">The Barrel Sauna UK Team</div>
+  <div class="dom">barrelsaunauk.com · Handcrafted in Wales</div>
+  <div class="sigcard">
+    <a href="https://www.barrelsaunauk.com"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a96e859fac7854efe0a2fdc.jpeg" alt="Barrel Sauna UK, bespoke, made to order"></a>
+  </div>
+  <div class="ver">v1</div>
+</footer>
+
+</body>
+</html>
