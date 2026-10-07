@@ -88,15 +88,15 @@ section{padding:90px 0;}
 .wales .duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
 
 /* ================= TRAILER ================= */
-.trailer{padding-top:90px;}
-.tphoto{position:relative;border-radius:22px;overflow:hidden;}
-.tphoto img{width:100%;}
-.tphoto::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,38,28,0.90) 0%,rgba(22,38,28,0.55) 34%,rgba(22,38,28,0.05) 62%,rgba(22,38,28,0.10) 100%);z-index:1;}
-.tphoto .over{position:absolute;top:0;left:0;right:0;z-index:2;padding:52px 56px;max-width:720px;}
-.tphoto .over .kicker{color:var(--honey-l);}
-.tphoto .over h2{color:#ffffff;}
-.tphoto .over h2 span{color:var(--honey-l);}
-.tphoto .over p{color:var(--veil-body);font-size:16px;margin:0;}
+.trailer{padding-top:0;}
+.tband{position:relative;min-height:clamp(560px,57vw,1000px);display:flex;align-items:flex-start;background:var(--ground) url("https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa7cd4a49f830e49b177299.jpg") center 70%/cover no-repeat;}
+.tband::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,38,28,0.90) 0%,rgba(22,38,28,0.62) 38%,rgba(22,38,28,0.15) 70%,rgba(22,38,28,0.25) 100%);}
+.tband .wrap{position:relative;width:100%;padding-top:96px;padding-bottom:96px;}
+.tband .over{max-width:560px;}
+.tband .kicker{color:var(--honey-l);}
+.tband h2{color:#ffffff;font-size:42px;}
+.tband h2 span{color:var(--honey-l);}
+.tband p{color:var(--veil-body);font-size:17px;margin:0;}
 .feats{position:relative;z-index:3;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:-48px 28px 0;}
 .feat{background:#ffffff;border-radius:18px;box-shadow:var(--shadow);padding:20px 18px 18px;text-align:center;}
 .feat svg{width:58px;height:58px;margin:0 auto 12px;display:block;}
@@ -157,10 +157,16 @@ section{padding:90px 0;}
 .pbox .bd{font-size:15px;color:var(--ink-l);}
 
 /* ================= EXTRAS ================= */
-.steps-feature{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;align-items:center;margin-top:30px;}
-.steps-feature img{width:100%;border-radius:22px;}
-.steps-feature h3{font-size:28px;margin-bottom:12px;}
-.steps-feature p{font-size:17px;color:var(--body-dark);margin:0;}
+.sband{position:relative;min-height:clamp(560px,56vw,900px);display:flex;align-items:flex-end;background:var(--ground) url("https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac5bd8b22bc27f58fab698b.png") center 60%/cover no-repeat;}
+.sband::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,38,28,0.10) 0%,rgba(22,38,28,0.20) 40%,rgba(22,38,28,0.88) 100%);}
+.sband .wrap{position:relative;width:100%;padding-top:80px;padding-bottom:80px;}
+.sband .over{max-width:620px;}
+.sband .kicker{color:var(--honey-l);}
+.sband h2{color:#ffffff;margin-bottom:10px;}
+.sband h2 span{color:var(--honey-l);}
+.sband h3{color:#ffffff;font-size:24px;margin:22px 0 8px;}
+.sband p{color:var(--veil-body);font-size:16px;margin:0;}
+.extras-add{padding:56px 0 80px;}
 .addons{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:10px;}
 .addons .glass h3{font-size:17px;}
 .addons .glass p{font-size:14px;}
@@ -204,7 +210,7 @@ footer .base{padding:28px 0 34px;font-size:11px;letter-spacing:2px;text-transfor
 @media(max-width:860px){
   section{padding:60px 0;}
   h2{font-size:28px;}
-  .hero .grid,.intro,.wales .head,.wales .grid,.sizes-head,.sideviews,.layouts,.steps-feature,.addons,.order .grid,.pair,.more,.takeaways,.steps{grid-template-columns:1fr;}
+  .hero .grid,.intro,.wales .head,.wales .grid,.sizes-head,.sideviews,.layouts,.addons,.order .grid,.pair,.more,.takeaways,.steps{grid-template-columns:1fr;}
   .lengths{grid-template-columns:1fr 1fr;}
   .order h2{font-size:38px;}
   .band{min-height:520px;}
@@ -215,8 +221,14 @@ footer .base{padding:28px 0 34px;font-size:11px;letter-spacing:2px;text-transfor
   .hero .logo{margin-bottom:34px;}
   .circ{flex-direction:column;align-items:flex-start;}
   .circ img{width:100%;max-width:300px;height:auto;aspect-ratio:1/1;flex:none;}
-  .tphoto::before{background:linear-gradient(180deg,rgba(22,38,28,0.10) 0%,rgba(22,38,28,0.10) 100%);}
-  .tphoto .over{position:static;background:var(--ground);padding:28px 24px 34px;max-width:none;}
+  .tband{min-height:100vw;background-position:center bottom;}
+  .tband::before{background:linear-gradient(180deg,rgba(22,38,28,0.92) 0%,rgba(22,38,28,0.70) 55%,rgba(22,38,28,0.20) 100%);}
+  .tband .wrap{padding-top:56px;padding-bottom:180px;}
+  .tband h2{font-size:30px;}
+  .tband p{font-size:15px;}
+  .sband{min-height:120vw;}
+  .sband .wrap{padding-top:200px;padding-bottom:48px;}
+  .extras-add{padding:40px 0 60px;}
   .feats{grid-template-columns:1fr 1fr;margin:24px 0 0;}
   .feature-op .pics{grid-template-columns:1fr;}
   .op-name{font-size:26px;}
@@ -270,7 +282,7 @@ footer .base{padding:28px 0 34px;font-size:11px;letter-spacing:2px;text-transfor
       <p class="lede">Looking to enhance your business with a bespoke mobile sauna? We specialise in building custom mobile saunas tailored to your needs, complete with in house manufactured trailers. Whether you're after a traditional wood-burning sauna or a sleek modern design, we deliver ready to use saunas crafted to your specifications. From design to delivery, we ensure every detail is handled, so your mobile sauna arrives fully equipped and business ready.</p>
     </div>
     <div class="circ">
-      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9d88e1b81a3502a8841931.jpg" alt="Space grey barrel sauna on its trailer at sunset">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac5e5fd7d735ea2a1768501.png" alt="Barrel sauna on its trailer on the beach, with timber steps">
       <div class="cap">Built on our<br>own trailer</div>
     </div>
   </div>
@@ -307,15 +319,16 @@ footer .base{padding:28px 0 34px;font-size:11px;letter-spacing:2px;text-transfor
 
 <!-- ================= TRAILER : rainy studio vibe one (2), full, text on photo ================= -->
 <section class="trailer">
-  <div class="wrap">
-    <div class="tphoto">
-      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa7cd4a49f830e49b177299.jpg" alt="Globe window barrel sauna on a galvanised twin axle trailer">
+  <div class="tband">
+    <div class="wrap">
       <div class="over">
         <div class="kicker">Our custom sauna trailers</div>
         <h2>Expertly manufactured, from frame to <span>finish</span></h2>
         <p>Our trailers are expertly manufactured entirely in-house, encompassing everything from frame construction and assembly to galvanizing, welding, and innovative design. Each trailer is meticulously crafted to meet your specific requirements and undergoes DVSA IVA, ensuring certification for compliance on UK roads.</p>
       </div>
     </div>
+  </div>
+  <div class="wrap">
     <div class="feats">
       <div class="feat">
         <svg viewBox="0 0 64 64" fill="none" stroke="#2B5336" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 6 L52 14 V30 C52 44 43 53 32 58 C21 53 12 44 12 30 V14 Z"/><path d="M32 21 C36 27 39 31 39 35 A7 7 0 0 1 25 35 C25 31 28 27 32 21 Z"/></svg>
@@ -394,7 +407,7 @@ footer .base{padding:28px 0 34px;font-size:11px;letter-spacing:2px;text-transfor
     <!-- Mor a sawna (4) + Hot to cold sauna (9) -->
     <div class="pair">
       <div>
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa7cd66a4d512c32b509c65.png" alt="M&ocirc;r A Sawna trailer sauna with its tinted panoramic globe window">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac5e4a97d735ea2a17667a3.png" alt="M&ocirc;r A Sawna trailer sauna with its tinted panoramic globe window">
         <div class="where">Barry Island</div>
         <h3 class="op-name">M&ocirc;r A Sawna</h3>
         <p class="op-lead">A coastal barrel sauna we built for regular, real-world use.</p>
@@ -504,21 +517,21 @@ footer .base{padding:28px 0 34px;font-size:11px;letter-spacing:2px;text-transfor
   </div>
 </section>
 
-<!-- ================= EXTRAS : Custom steps option 2 (15) as the feature, add-ons under ================= -->
-<section class="dark">
+<!-- ================= EXTRAS : new steps image, full bleed with writing over, add-ons under ================= -->
+<div class="sband">
   <div class="wrap">
-    <div class="kicker">Built for the road</div>
-    <h2>Finish it your <span>way</span></h2>
-    <div class="steps-feature">
-      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac5bd9b22bc27f58fab6afd.png" alt="Mobile barrel sauna in a field with custom timber steps clipped onto the trailer decking">
-      <div>
-        <div class="subhead" style="margin-bottom:10px;">Built to match. Designed to clip on.</div>
-        <h3>Custom Timber Steps</h3>
-        <p>Our steps are custom-made using the same timber decking material as your sauna, so they blend in seamlessly. They simply clip onto the end of the decking, no fixings, no fuss.</p>
-        <div class="chips"><span>Matching timber</span><span>Clip-on design</span><span>Custom built</span></div>
-      </div>
+    <div class="over">
+      <div class="kicker">Built for the road</div>
+      <h2>Finish it your <span>way</span></h2>
+      <h3>Custom Timber Steps</h3>
+      <p>Our steps are custom-made using the same timber decking material as your sauna, so they blend in seamlessly. They simply clip onto the end of the decking, no fixings, no fuss.</p>
+      <div class="chips"><span>Matching timber</span><span>Clip-on design</span><span>Custom built</span></div>
     </div>
-    <p class="subhead" style="margin-top:46px;margin-bottom:14px;">Add-ons</p>
+  </div>
+</div>
+<section class="dark extras-add">
+  <div class="wrap">
+    <p class="subhead" style="margin:0 0 14px;">Add-ons</p>
     <div class="addons">
       <div class="glass"><div class="lb">Off-grid</div><h3>Solar Powered Lighting</h3><p>Power your entire sauna lighting system off-grid with a roof-mounted solar panel.</p></div>
       <div class="glass"><div class="lb">Tinted or blackout</div><h3>Panoramic Dome Window</h3><p>A full circular glass back wall with a modern edge. The glass draws the outside in.</p></div>
