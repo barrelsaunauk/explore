@@ -54,15 +54,18 @@ section{padding:90px 0;}
 .chips span{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#ffffff;background:var(--glass);border:1px solid var(--glass-line);border-radius:20px;padding:7px 14px;}
 
 /* ================= HERO ================= */
-.hero{background:var(--ground);padding:30px 0 90px;}
-.hero .logo{width:120px;margin-bottom:56px;}
-.hero .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.hero{position:relative;min-height:clamp(640px,54vw,900px);display:flex;flex-direction:column;background:var(--ground) url("https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9b307bac5d03a1095ebcb5.png") 60% 40%/cover no-repeat;}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,38,28,0.90) 0%,rgba(22,38,28,0.70) 34%,rgba(22,38,28,0.18) 62%,rgba(22,38,28,0.10) 100%),linear-gradient(180deg,rgba(22,38,28,0.35) 0%,rgba(22,38,28,0) 30%,rgba(22,38,28,0) 70%,rgba(22,38,28,0.55) 100%);}
+.hero .wrap{position:relative;width:100%;}
+.hero .top{padding-top:30px;}
+.hero .logo{width:120px;}
+.hero .body{flex:1;display:flex;align-items:center;}
+.hero .copy{max-width:560px;padding:70px 0 80px;}
 .hero .dash{width:44px;height:2px;background:var(--honey-l);margin-bottom:14px;}
 .hero .kicker{color:var(--honey-l);}
-.hero h1{color:#ffffff;font-size:54px;line-height:1.05;letter-spacing:-1px;margin-bottom:20px;}
+.hero h1{color:#ffffff;font-size:56px;line-height:1.04;letter-spacing:-1px;margin-bottom:20px;}
 .hero h1 span{color:var(--honey-l);}
-.hero p{color:var(--veil-body);font-size:18px;max-width:520px;margin-bottom:30px;}
-.hero .shot{border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.45);}
+.hero p{color:var(--veil-body);font-size:18px;max-width:500px;margin-bottom:30px;}
 .hero .facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:40px;padding-top:26px;border-top:1px solid var(--glass-line);}
 .hero .facts div{font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--body-dark);}
 .hero .facts .big{display:block;font-size:26px;letter-spacing:0;color:var(--honey-l);font-weight:700;margin-bottom:2px;}
@@ -71,7 +74,8 @@ section{padding:90px 0;}
 .intro{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center;}
 .intro .draw{width:190px;margin-bottom:26px;}
 .circ{display:flex;align-items:center;gap:26px;}
-.circ img{flex:0 0 260px;width:260px;height:260px;border-radius:50%;object-fit:cover;border:1px solid var(--hairline);}
+.circ .disc{position:relative;flex:0 0 260px;width:260px;height:260px;border-radius:50%;overflow:hidden;border:1px solid var(--hairline);}
+.circ .disc img{position:absolute;right:0;bottom:0;width:140%;max-width:none;height:auto;}
 .circ .cap{font-size:13px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);line-height:1.7;}
 
 /* labelled image cards */
@@ -210,17 +214,21 @@ footer .base{padding:28px 0 34px;font-size:11px;letter-spacing:2px;text-transfor
 @media(max-width:860px){
   section{padding:60px 0;}
   h2{font-size:28px;}
-  .hero .grid,.intro,.wales .head,.wales .grid,.sizes-head,.sideviews,.layouts,.addons,.order .grid,.pair,.more,.takeaways,.steps{grid-template-columns:1fr;}
+  .intro,.wales .head,.wales .grid,.sizes-head,.sideviews,.layouts,.addons,.order .grid,.pair,.more,.takeaways,.steps{grid-template-columns:1fr;}
   .lengths{grid-template-columns:1fr 1fr;}
   .order h2{font-size:38px;}
   .band{min-height:520px;}
   .inter{min-height:460px;}
   .order{padding:70px 0 90px;}
+  .hero{min-height:0;background-position:72% bottom;background-size:auto 100%;}
+  .hero::before{background:linear-gradient(180deg,rgba(22,38,28,0.92) 0%,rgba(22,38,28,0.80) 52%,rgba(22,38,28,0.25) 78%,rgba(22,38,28,0.35) 100%);}
+  .hero .copy{padding:40px 0 300px;}
   .hero h1{font-size:38px;}
   .hero p{font-size:16px;}
-  .hero .logo{margin-bottom:34px;}
+  .hero .facts{gap:18px;}
+  .hero .facts .big{font-size:20px;}
   .circ{flex-direction:column;align-items:flex-start;}
-  .circ img{width:100%;max-width:300px;height:auto;aspect-ratio:1/1;flex:none;}
+  .circ .disc{flex:none;width:280px;height:280px;max-width:100%;}
   .tband{min-height:100vw;background-position:center bottom;}
   .tband::before{background:linear-gradient(180deg,rgba(22,38,28,0.92) 0%,rgba(22,38,28,0.70) 55%,rgba(22,38,28,0.20) 100%);}
   .tband .wrap{padding-top:56px;padding-bottom:180px;}
@@ -247,10 +255,12 @@ footer .base{padding:28px 0 34px;font-size:11px;letter-spacing:2px;text-transfor
 
 <!-- ================= HERO : the hero (3), shown whole ================= -->
 <header class="hero">
-  <div class="wrap">
+  <div class="wrap top">
     <img class="logo" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK">
-    <div class="grid">
-      <div>
+  </div>
+  <div class="body">
+    <div class="wrap">
+      <div class="copy">
         <div class="dash"></div>
         <div class="kicker">Mobile Saunas</div>
         <h1>Custom-Built Mobile Saunas For Your <span>Business</span></h1>
@@ -264,9 +274,6 @@ footer .base{padding:28px 0 34px;font-size:11px;letter-spacing:2px;text-transfor
           <div><span class="big">Welsh</span>Steel and timber</div>
           <div><span class="big">Bespoke</span>Made to order</div>
         </div>
-      </div>
-      <div class="shot">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa7cd4e9be8d98201fc0138.png" alt="Three of our barrel saunas outside the Welsh workshop, seen from above">
       </div>
     </div>
   </div>
@@ -282,7 +289,7 @@ footer .base{padding:28px 0 34px;font-size:11px;letter-spacing:2px;text-transfor
       <p class="lede">Looking to enhance your business with a bespoke mobile sauna? We specialise in building custom mobile saunas tailored to your needs, complete with in house manufactured trailers. Whether you're after a traditional wood-burning sauna or a sleek modern design, we deliver ready to use saunas crafted to your specifications. From design to delivery, we ensure every detail is handled, so your mobile sauna arrives fully equipped and business ready.</p>
     </div>
     <div class="circ">
-      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac5e5fd7d735ea2a1768501.png" alt="Barrel sauna on its trailer on the beach, with timber steps">
+      <div class="disc"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac5e5fd7d735ea2a1768501.png" alt="Barrel sauna on its trailer on the beach, with timber steps"></div>
       <div class="cap">Built on our<br>own trailer</div>
     </div>
   </div>
