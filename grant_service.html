@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grant Service | Barrel Sauna UK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#16261C; --deep:#1F3D28; --forest:#2B5336; --mid:#417C51; --sage:#50795F; --sagepale:#8fae86;
+  --honey:#C08B41; --honeylight:#D6A868; --tint:#dbe7dd; --tint2:#eef4ef; --white:#ffffff;
+  --hair:rgba(31,61,40,.12);
+  --lift:0 1px 2px rgba(22,38,28,.05),0 10px 30px rgba(22,38,28,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Raleway',Arial,sans-serif;font-weight:400;color:var(--ground);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--honey);margin-bottom:18px}
+.kicker.ondark{color:var(--honeylight)}
+.rule{width:56px;height:2px;background:var(--honey);margin-bottom:22px}
+h1,h2,h3{font-weight:700;line-height:1.1;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4.4vw,48px);color:var(--deep);margin-bottom:18px}
+h2 span{color:var(--honey)}
+.on-dark h2{color:var(--white)}
+.on-dark h2 span{color:var(--honeylight)}
+.lede{font-size:18px;color:var(--sage);max-width:660px}
+.on-dark .lede{color:var(--sagepale)}
+section{padding:110px 0}
+.pill{display:inline-block;background:var(--honey);color:var(--white);font-weight:700;font-size:15px;letter-spacing:.04em;padding:16px 34px;border-radius:999px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.pill:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(192,139,65,.35)}
+.pill.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.55)}
+.pill.wait{background:var(--tint2);color:var(--sage);border:1px dashed var(--sagepale);cursor:default;box-shadow:none;transform:none}
+
+/* HERO */
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:var(--white);background:var(--ground) url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9e5427b81a3502a8958dbf.jpg') center/cover no-repeat;padding:0}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,38,28,.55) 0%,rgba(22,38,28,.35) 35%,rgba(22,38,28,.88) 100%)}
+.hero .top{position:absolute;top:0;left:0;right:0;z-index:2}
+.hero .top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:28px}
+.hero .logo{height:54px;width:auto}
+.hero .tag{font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:9px 18px}
+.hero .inner{position:relative;z-index:2;padding-bottom:96px;width:100%}
+.hero h1{font-size:clamp(42px,7vw,86px);max-width:880px;margin-bottom:24px}
+.hero h1 span{color:var(--honeylight)}
+.hero p{font-size:19px;max-width:620px;color:rgba(255,255,255,.88);margin-bottom:36px}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero .facts{display:flex;gap:44px;flex-wrap:wrap;margin-top:56px;padding-top:28px;border-top:1px solid rgba(255,255,255,.18)}
+.hero .facts div{font-size:13px;color:rgba(255,255,255,.7);letter-spacing:.04em}
+.hero .facts .v{display:block;font-size:30px;font-weight:700;color:var(--white);letter-spacing:0;margin-bottom:2px}
+
+/* WHAT A GRANT IS */
+.split{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:center}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.lift{background:var(--white);border:1px solid var(--hair);border-radius:18px;box-shadow:var(--lift);padding:32px 28px}
+.lift .num{font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--honey);margin-bottom:14px}
+.lift h3{font-size:21px;color:var(--deep);margin-bottom:10px}
+.lift p{font-size:15.5px;color:var(--sage)}
+.circle-insert{display:flex;align-items:center;gap:26px}
+.circle-insert img{width:200px;height:200px;border-radius:50%;object-fit:cover;flex:0 0 200px;box-shadow:var(--lift);border:6px solid var(--white)}
+.circle-insert .cap{font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--sage);line-height:1.9}
+.circle-insert .cap em{display:block;font-style:normal;font-weight:400;letter-spacing:0;text-transform:none;font-size:15px;color:var(--sage);margin-top:10px;line-height:1.6}
+.why{margin-top:28px;font-size:16.5px;color:var(--ground)}
+.why p+p{margin-top:14px}
+
+/* MONEY BEHIND IT */
+.dark{background:var(--deep);color:var(--white)}
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:56px}
+.panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:34px 32px}
+.panel h3{font-size:13px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--honeylight);margin-bottom:28px}
+.bar{margin-bottom:26px}
+.bar:last-child{margin-bottom:0}
+.bar .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:9px}
+.bar .lab{font-size:15px;color:rgba(255,255,255,.9)}
+.bar .lab .s{display:block;font-size:12.5px;color:var(--sagepale);margin-top:2px}
+.bar .val{font-size:26px;font-weight:700;color:var(--white);white-space:nowrap}
+.bar .track{height:10px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
+.bar .fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--honey),var(--honeylight));width:0;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+.in .bar .fill{width:var(--w)}
+.note{margin-top:34px;font-size:13.5px;color:var(--sagepale);max-width:820px}
+.note a{color:var(--sagepale)}
+
+/* EXAMPLE */
+.example{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px;align-items:stretch}
+.ticket{background:var(--white);border:1px solid var(--hair);border-radius:20px;box-shadow:var(--lift);overflow:hidden}
+.ticket .head{background:var(--tint2);padding:26px 30px;border-bottom:1px dashed var(--sagepale)}
+.ticket .head .kicker{margin-bottom:8px}
+.ticket .head h3{font-size:24px;color:var(--deep)}
+.ticket .body{padding:26px 30px}
+.line{display:flex;justify-content:space-between;gap:18px;padding:13px 0;border-bottom:1px solid var(--hair);font-size:15.5px}
+.line:last-child{border-bottom:0}
+.line > span:first-child{color:var(--sage)}
+.line .v{font-weight:700;color:var(--deep);white-space:nowrap}
+.line.total{font-size:18px}
+.line.total .v{color:var(--honey);font-size:22px}
+.line.sub span,.line.sub .v{font-size:13.5px;color:var(--sage);font-weight:400}
+.rules{display:flex;flex-direction:column;gap:14px}
+.rule-card{display:flex;gap:16px;align-items:flex-start;background:var(--white);border:1px solid var(--hair);border-radius:16px;box-shadow:var(--lift);padding:20px 22px}
+.disc{flex:0 0 40px;height:40px;border-radius:50%;background:var(--tint2);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--forest);font-size:15px}
+.rule-card h4{font-size:16px;font-weight:700;color:var(--deep);margin-bottom:3px}
+.rule-card p{font-size:14.5px;color:var(--sage)}
+.alert{border-color:var(--honey);border-width:1.5px}
+.alert .disc{background:var(--honey);color:var(--white)}
+
+/* JOURNEY */
+.journey{margin-top:70px}
+.journey h3.sub{font-size:13px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--honey);margin-bottom:24px}
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;counter-reset:s}
+.step{background:var(--white);border:1px solid var(--hair);border-radius:16px;box-shadow:var(--lift);padding:22px 18px;position:relative}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);display:block;font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--honey);margin-bottom:10px}
+.step h4{font-size:15.5px;font-weight:700;color:var(--deep);margin-bottom:6px;line-height:1.3}
+.step p{font-size:13.5px;color:var(--sage);line-height:1.55}
+.step.key{background:var(--deep);border-color:var(--deep)}
+.step.key h4{color:var(--white)}
+.step.key p{color:var(--sagepale)}
+.step.key::before{color:var(--honeylight)}
+
+/* DETAILS BAND */
+.details{position:relative;padding:150px 0;color:var(--white);background:var(--ground) url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa00cb4f44f6ea72fcb18fa.png') center/cover no-repeat}
+.details::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,38,28,.9) 0%,rgba(22,38,28,.62) 55%,rgba(22,38,28,.35) 100%)}
+.details .wrap{position:relative}
+.details h2{color:var(--white);max-width:640px}
+.details h2 span{color:var(--honeylight)}
+.details p{max-width:560px;font-size:17.5px;color:rgba(255,255,255,.86)}
+
+/* PACKAGES */
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;align-items:stretch}
+.pkg{background:var(--white);border:1px solid var(--hair);border-radius:22px;box-shadow:var(--lift);padding:36px 30px 32px;display:flex;flex-direction:column}
+.pkg.star{border:1.5px solid var(--honey);position:relative}
+.pkg.star .badge{position:absolute;top:-13px;left:30px;background:var(--honey);color:var(--white);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;border-radius:999px;padding:6px 14px}
+.pkg .kicker{margin-bottom:10px}
+.pkg h3{font-size:28px;color:var(--deep);margin-bottom:10px}
+.pkg .for{font-size:15px;color:var(--sage);margin-bottom:22px;min-height:48px}
+.price{padding:20px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-bottom:22px}
+.price .amt{font-size:34px;font-weight:700;color:var(--deep);line-height:1}
+.price .amt.tbc{font-size:22px;color:var(--sage)}
+.price .vat{font-size:13px;color:var(--sage);margin-top:6px}
+.pkg ul{list-style:none;flex:1;margin-bottom:26px}
+.pkg li{position:relative;padding:8px 0 8px 26px;font-size:15px;color:var(--ground);border-bottom:1px solid rgba(31,61,40,.06)}
+.pkg li:last-child{border-bottom:0}
+.pkg li::before{content:"";position:absolute;left:2px;top:15px;width:10px;height:10px;border-radius:50%;border:2px solid var(--honey)}
+.pkg .pill{text-align:center;width:100%}
+.keep{margin-top:40px;background:var(--tint2);border-radius:20px;padding:30px 34px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+.keep .disc{flex:none;width:52px;height:52px;background:var(--white);font-size:22px}
+.keep h4{font-size:18px;font-weight:700;color:var(--deep);margin-bottom:4px}
+.keep p{font-size:15px;color:var(--sage)}
+
+/* DRAWINGS */
+.drawings{background:var(--tint2);padding:90px 0}
+.drawings .strip{background:var(--white);border:1px solid var(--hair);border-radius:20px;box-shadow:var(--lift);padding:38px 34px;margin-top:38px}
+.drawings .strip img{width:100%;height:auto}
+.terms{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.terms .lift h3{font-size:17px}
+.terms .lift p{font-size:14.5px}
+
+/* FOOTER */
+footer{background:var(--ground);color:var(--white);padding:90px 0 60px;border-radius:36px 36px 0 0}
+footer .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+footer h2{color:var(--white)}
+footer h2 span{color:var(--honeylight)}
+footer p{color:var(--sagepale);font-size:16.5px;margin-bottom:28px;max-width:460px}
+.sigcard{background:var(--white);border-radius:20px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.sigcard img{width:100%;height:auto}
+.legal{margin-top:60px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:rgba(255,255,255,.45);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .split,.example,.panels,footer .grid,.terms{grid-template-columns:1fr}
+  .split{gap:48px}
+  .cards3,.pkgs{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  section{padding:76px 0}
+  .hero .inner{padding-bottom:64px;padding-top:120px}
+  .hero .logo{height:42px}
+  .hero .tag{display:none}
+  .hero p{font-size:17px}
+  .hero .facts{gap:26px}
+  .hero .facts .v{font-size:24px}
+  .circle-insert{flex-direction:column;align-items:flex-start}
+  .circle-insert img{width:160px;height:160px;flex-basis:160px}
+  .steps{grid-template-columns:1fr}
+  .panel{padding:26px 20px}
+  .bar .val{font-size:21px}
+  .ticket .head,.ticket .body{padding:22px 20px}
+  .keep{grid-template-columns:1fr;padding:24px 22px}
+  .details{padding:100px 0}
+  .drawings .strip{padding:22px 16px}
+  footer{border-radius:26px 26px 0 0}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="top"><div class="wrap">
+    <img class="logo" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK">
+    <span class="tag">Grant Service</span>
+  </div></div>
+  <div class="inner"><div class="wrap">
+    <div class="rule"></div>
+    <p class="kicker ondark">Barrel Sauna UK &middot; Grant Service</p>
+    <h1>Let a grant pay for most of your <span>sauna</span></h1>
+    <p>Councils across Wales put money aside every year to help local businesses grow. We find the right grant for you, build the full application, and then build your sauna in our Welsh workshop.</p>
+    <div class="btns">
+      <a class="pill" href="#packages">See the packages</a>
+      <a class="pill ghost" href="#how">How it works</a>
+    </div>
+    <div class="facts">
+      <div><span class="v">Up to 75%</span>of eligible costs</div>
+      <div><span class="v">&pound;15,000</span>top grant in our example</div>
+      <div><span class="v">Built in Wales</span>by a Welsh family maker</div>
+    </div>
+  </div></div>
+</header>
+
+<!-- WHAT A GRANT IS -->
+<section id="what">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <div class="rule"></div>
+        <p class="kicker">The simple version</p>
+        <h2>What a grant <span>is</span></h2>
+        <p class="lede">A grant is money from the council or the government that helps your business buy something it needs to grow. You do not pay it back.</p>
+        <div class="why">
+          <p>Councils give grants because growing local businesses create jobs, bring visitors in and keep money in the area. A gym that adds a sauna and cold plunge gives members a reason to stay and new people a reason to join. That is exactly the kind of growth these funds are set up to back.</p>
+          <p>The catch is the paperwork. A strong application needs a business plan, a cash flow forecast, prices from more than one maker and a clear case for growth. That is the part we take off your hands.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="circle-insert">
+          <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9ffd1c641597c752ab184f.jpg" alt="Barrel Sauna UK nameplate, built in the United Kingdom">
+          <div class="cap">A Welsh maker<em>Every build carries our nameplate. Many Welsh grants favour local suppliers, and we build every sauna ourselves in Caerphilly.</em></div>
+        </div>
+      </div>
+    </div>
+    <div class="cards3">
+      <div class="lift reveal"><p class="num">01</p><h3>You do not pay it back</h3><p>A grant is not a loan. Once the work is done and the claim is paid, the money is yours to keep, as long as you follow the grant rules.</p></div>
+      <div class="lift reveal"><p class="num">02</p><h3>It covers part of the cost</h3><p>Most grants pay a share of the price, not all of it. In our example the council pays 75% and your business puts in the rest.</p></div>
+      <div class="lift reveal"><p class="num">03</p><h3>It is paid back to you after</h3><p>You pay for the build first, then claim the grant with your invoices. We plan the timing with you so nothing catches you out.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE MONEY BEHIND IT -->
+<section class="dark on-dark" id="money">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="rule"></div>
+      <p class="kicker ondark">The money behind it</p>
+      <h2>Real funds, real <span>numbers</span></h2>
+      <p class="lede">These are published figures for money set aside to grow Welsh businesses and places. Some rounds have closed and new ones open through the year, which is why it pays to have someone watching for you.</p>
+    </div>
+    <div class="panels">
+      <div class="panel reveal">
+        <h3>Wales wide funds</h3>
+        <div class="bar">
+          <div class="row"><div class="lab">UK Shared Prosperity Fund, Wales<span class="s">2022 to 2025, now replaced by the Local Growth Fund</span></div><div class="val">&pound;585m</div></div>
+          <div class="track"><div class="fill" style="--w:100%"></div></div>
+        </div>
+        <div class="bar">
+          <div class="row"><div class="lab">Local Growth Fund, Wales<span class="s">2026 to 2027, paid out through the regions and councils</span></div><div class="val">&pound;167.8m</div></div>
+          <div class="track"><div class="fill" style="--w:28.7%"></div></div>
+        </div>
+      </div>
+      <div class="panel reveal">
+        <h3>Tourism and hospitality in Wales</h3>
+        <div class="bar">
+          <div class="row"><div class="lab">Wales Tourism Investment Fund<span class="s">Loans with a grant element, for bigger projects</span></div><div class="val">&pound;50m</div></div>
+          <div class="track"><div class="fill" style="--w:100%"></div></div>
+        </div>
+        <div class="bar">
+          <div class="row"><div class="lab">Brilliant Basics tourism fund<span class="s">Visitor facilities across Wales since 2021</span></div><div class="val">&pound;15m+</div></div>
+          <div class="track"><div class="fill" style="--w:30%"></div></div>
+        </div>
+        <div class="bar">
+          <div class="row"><div class="lab">Croeso Weatherproofing Fund<span class="s">Extra funding added in January 2026</span></div><div class="val">&pound;2m</div></div>
+          <div class="track"><div class="fill" style="--w:4%"></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">Sources: UK Government (Apr 2022), Welsh Government Local Growth Fund allocations (Apr 2026), Development Bank of Wales and Welsh Government (Apr 2025), Welsh Government Brilliant Basics (May 2025) and Year of Croeso (Dec 2025). The bars in each panel are drawn to their own scale.</p>
+  </div>
+</section>
+
+<!-- WORKED EXAMPLE -->
+<section id="example">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="rule"></div>
+      <p class="kicker">A worked example</p>
+      <h2>How the sums <span>work</span></h2>
+      <p class="lede">The Business Growth Grant from Rhondda Cynon Taf council is open now, on a rolling basis. It pays up to 75% of eligible costs, from &pound;2,000 to &pound;15,000, for businesses trading from commercial premises in the area.</p>
+    </div>
+    <div class="example">
+      <div class="ticket reveal">
+        <div class="head"><p class="kicker">Example build</p><h3>Two 1.8m barrel saunas</h3></div>
+        <div class="body">
+          <div class="line"><span>Build price</span><span class="v">&pound;12,500 plus VAT</span></div>
+          <div class="line sub"><span>Delivery and installation</span><span class="v">Priced separately</span></div>
+          <div class="line"><span>Grant at 75%</span><span class="v">&pound;9,375</span></div>
+          <div class="line total"><span>Your business puts in</span><span class="v">&pound;3,125 plus VAT</span></div>
+        </div>
+      </div>
+      <div class="rules reveal">
+        <div class="rule-card alert"><div class="disc">!</div><div><h4>Nothing is ordered before the offer letter</h4><p>Any money paid towards the sauna before the council says yes in writing, deposits included, can make it ineligible. So the build is only ordered once your offer letter arrives.</p></div></div>
+        <div class="rule-card"><div class="disc">&pound;</div><div><h4>You pay first, then claim it back</h4><p>The council pays the grant once the build is paid for in full by bank transfer from your business account.</p></div></div>
+        <div class="rule-card"><div class="disc">2</div><div><h4>Prices from two makers</h4><p>The council asks for comparable prices for each item. We help you gather what is needed.</p></div></div>
+        <div class="rule-card"><div class="disc">%</div><div><h4>VAT is not covered</h4><p>The grant is worked out on the price before VAT. VAT registered businesses can usually reclaim it in the normal way.</p></div></div>
+      </div>
+    </div>
+
+    <div class="journey" id="how">
+      <h3 class="sub">How it works, start to finish</h3>
+      <div class="steps">
+        <div class="step reveal"><h4>Choose your package</h4><p>Pick the level of help you need and pay the service fee.</p></div>
+        <div class="step reveal"><h4>We build your pack</h4><p>Business plan, cash flow forecast, prices and the growth case.</p></div>
+        <div class="step reveal"><h4>We apply with you</h4><p>Expression of interest first, then the full application.</p></div>
+        <div class="step key reveal"><h4>Offer letter arrives</h4><p>Only now do we take your build deposit and place the order.</p></div>
+        <div class="step reveal"><h4>We build and install</h4><p>Built in our Caerphilly workshop, installed on site by our team.</p></div>
+        <div class="step reveal"><h4>You claim the grant</h4><p>We supply the invoices and paperwork for your claim.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS BAND -->
+<section class="details">
+  <div class="wrap reveal">
+    <div class="rule"></div>
+    <p class="kicker ondark">Handcrafted in Wales</p>
+    <h2>Built to earn its place for <span>years</span></h2>
+    <p>Thermowood cladding, heat treated for the outdoors and bound in stainless steel. A grant funded build has to last, and ours are made to.</p>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="rule"></div>
+      <p class="kicker">The packages</p>
+      <h2>Pick the help you <span>need</span></h2>
+      <p class="lede">Our grant team includes a qualified accountant who prepares the financial side of every application. Choose how much of it you want us to carry.</p>
+    </div>
+    <div class="pkgs">
+      <div class="pkg star reveal">
+        <span class="badge">Most chosen</span>
+        <p class="kicker">Package one</p>
+        <h3>Done for you</h3>
+        <p class="for">For businesses that want the whole thing handled from start to finish.</p>
+        <div class="price"><div class="amt tbc">Price to follow</div><div class="vat">plus VAT</div></div>
+        <ul>
+          <li>Grant search for your area and business</li>
+          <li>Business plan written for you</li>
+          <li>Two year cash flow forecast</li>
+          <li>Expression of interest and full application</li>
+          <li>We handle the council's questions</li>
+          <li>Grant ready pack you keep</li>
+        </ul>
+        <span class="pill wait" data-pay="done-for-you">Payment link to follow</span>
+      </div>
+      <div class="pkg reveal">
+        <p class="kicker">Package two</p>
+        <h3>Assisted</h3>
+        <p class="for">For businesses whose own accountant already has a plan and forecast ready.</p>
+        <div class="price"><div class="amt tbc">Price to follow</div><div class="vat">plus VAT</div></div>
+        <ul>
+          <li>Grant search for your area and business</li>
+          <li>You upload your plan and accounts</li>
+          <li>We check them against the grant rules</li>
+          <li>Expression of interest and full application</li>
+          <li>Grant ready pack you keep</li>
+        </ul>
+        <span class="pill wait" data-pay="assisted">Payment link to follow</span>
+      </div>
+      <div class="pkg reveal">
+        <p class="kicker">Package three</p>
+        <h3>Reload</h3>
+        <p class="for">For clients we have already worked with, applying to the next round or a new fund.</p>
+        <div class="price"><div class="amt tbc">Price to follow</div><div class="vat">plus VAT</div></div>
+        <ul>
+          <li>Your existing pack updated</li>
+          <li>Matched to the next open grant</li>
+          <li>Application resubmitted for you</li>
+          <li>The quickest and lowest cost route</li>
+        </ul>
+        <span class="pill wait" data-pay="reload">Payment link to follow</span>
+      </div>
+    </div>
+    <div class="keep reveal">
+      <div class="disc">&#10003;</div>
+      <div><h4>Nothing is wasted</h4><p>The service fee covers the work, so it is paid whatever the council decides. You keep a full grant ready pack, your business plan and forecast included, and it can go straight into the next round or another fund.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DRAWINGS AND TERMS -->
+<section class="drawings">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="rule"></div>
+      <p class="kicker">What a grant can put on site</p>
+      <h2>More than a <span>sauna</span></h2>
+      <p class="lede">Saunas, cold plunges, the Double Dipper, hot tubs, glamping pods and shepherd's huts. If it helps your business grow, we can build it and help fund it.</p>
+    </div>
+    <div class="strip reveal"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9c52d9e29b3baf97d3415c.png" alt="Barrel Sauna UK product range line drawings"></div>
+    <div class="terms">
+      <div class="lift reveal"><p class="num">The fine print</p><h3>The service fee</h3><p>The fee is non refundable whatever the outcome of the application, because the work is done either way and the pack is yours to keep.</p></div>
+      <div class="lift reveal"><p class="num">The fine print</p><h3>Barrel Sauna UK as your supplier</h3><p>Our grant service is for builds made by us. When your grant is approved, the funded build is ordered from Barrel Sauna UK, and we confirm this with you in a short supplier agreement at the start.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div class="reveal">
+        <div class="rule"></div>
+        <p class="kicker ondark">Ready when you are</p>
+        <h2>Let us find your <span>grant</span></h2>
+        <p>Choose a package and we will start on your grant search straight away. If you would like to talk it through first, James is happy to go through it with you.</p>
+        <a class="pill" href="#packages">See the packages</a>
+      </div>
+      <div class="sigcard reveal"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a96e859fac7854efe0a2fdc.jpeg" alt="Barrel Sauna UK"></div>
+    </div>
+    <div class="legal"><span>Barrel Sauna UK is a trading name of Thermal Living Limited</span><span>barrelsaunauk.com</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal,.panels');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});document.querySelectorAll('.panel').forEach(function(p){p.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:.15});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
