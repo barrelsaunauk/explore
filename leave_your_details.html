@@ -101,14 +101,14 @@
 
   <div class="card done" id="done">
     <div class="big">✓</div>
-    <h2>Lovely, that's <em>with us</em></h2>
-    <p>Ready for the next person in a moment.</p>
+    <h2>Thank you, we've got your <em>details</em></h2>
+    <p>We'll be in touch soon.</p>
   </div>
 </div>
 
 <script>
-  // Same GHL inbound webhook as the expo landing page form (Expo 2026 intake workflow)
-  var WEBHOOK = 'https://services.leadconnectorhq.com/hooks/J378Bt0d7JvG2rXks3zo/webhook-trigger/170126d0-9252-4280-b84d-5ec79c2bbd0c';
+  // GHL inbound webhook for Expo 2026 - 02 leave your details form intake
+  var WEBHOOK = 'https://services.leadconnectorhq.com/hooks/J378Bt0d7JvG2rXks3zo/webhook-trigger/KeGpikTZQTh2F3nA6eVH';
   var form = document.getElementById('qc');
   var done = document.getElementById('done');
   var msg = document.getElementById('msg');
@@ -149,7 +149,7 @@
       .then(function(){
         form.style.display = 'none';
         done.style.display = 'block';
-        setTimeout(reset, 3000);
+        setTimeout(reset, 5000);
       }).catch(function(){
         go.disabled = false;
         msg.textContent = 'That did not send. Check the signal and tap again.';
