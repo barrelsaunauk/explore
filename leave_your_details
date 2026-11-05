@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Capture</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#16261C; --forest-deep:#1F3D28; --forest:#2B5336; --mid:#417C51;
+    --sage-pale:#8fae86; --honey:#C08B41; --honey-l:#D6A868;
+    --glass:rgba(22,38,28,0.55); --glass-2:rgba(255,255,255,0.10); --line:rgba(255,255,255,0.28);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#16261C;overflow:hidden;height:auto;overscroll-behavior:none}
+  body{font-family:'Poppins',Arial,sans-serif;font-weight:400;color:#ffffff;-webkit-font-smoothing:antialiased;position:relative}
+  .bg{position:absolute;inset:0;z-index:0;background:#16261C url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9e59fc506b5777477bf393.png') center/cover no-repeat}
+  .bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,38,28,0.78) 0%,rgba(22,38,28,0.62) 40%,rgba(22,38,28,0.82) 100%)}
+  .wrap{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:24px 18px 18px}
+
+  /* heading and arrow */
+  .hero{text-align:center;margin-bottom:10px}
+  h1{font-size:30px;font-weight:700;line-height:1.1;letter-spacing:-0.5px;text-shadow:0 2px 24px rgba(0,0,0,0.4)}
+  h1 em{font-style:normal;color:var(--honey-l)}
+  .arrow{display:block;width:44px;height:50px;margin:2px auto 0;color:var(--honey-l);animation:bob 2.2s ease-in-out infinite;
+    filter:drop-shadow(0 2px 10px rgba(0,0,0,0.35))}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+  @media (prefers-reduced-motion:reduce){.arrow{animation:none}}
+
+  /* panels */
+  .card{background:var(--glass);border:1px solid var(--line);border-radius:24px;padding:20px 20px;margin-bottom:14px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.22)}
+  .sec{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:400;margin-bottom:18px}
+  .disc{width:34px;height:34px;border-radius:50%;background:var(--forest-deep);border:1px solid var(--honey-l);
+    display:flex;align-items:center;justify-content:center;font-size:19px;flex:none}
+  .opt{font-size:13px;color:rgba(255,255,255,0.7)}
+  label.l{display:block;font-size:13px;margin:0 0 5px;color:rgba(255,255,255,0.9)}
+  .field{margin-bottom:10px}
+  input,textarea{width:100%;font-family:inherit;font-weight:400;font-size:16px;color:#ffffff;background:var(--glass-2);
+    border:1px solid var(--line);border-radius:12px;padding:12px 14px;outline:none;transition:border-color .15s, background .15s}
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.55)}
+  input:focus,textarea:focus{border-color:var(--honey-l);background:rgba(255,255,255,0.16)}
+  textarea{min-height:70px;resize:none}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:6px;font-family:inherit;font-weight:400;
+    font-size:17px;color:#ffffff;background:var(--honey);border:0;border-radius:40px;padding:14px;cursor:pointer;min-height:52px;
+    box-shadow:0 12px 28px rgba(0,0,0,0.3)}
+  .btn svg{width:22px;height:22px;transition:transform .2s}
+  .btn:hover svg{transform:translateX(4px)}
+  .btn:disabled{opacity:.6;cursor:default}
+  .msg{text-align:center;font-size:14px;color:rgba(255,255,255,0.9)}
+  .msg:not(:empty){margin-top:12px}
+  .done{display:none;text-align:center;padding:52px 16px}
+  .done .big{width:76px;height:76px;border-radius:50%;background:var(--honey);font-size:34px;
+    display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+  .done h2{font-size:32px;font-weight:700;margin-bottom:8px}
+  .done h2 em{font-style:normal;color:var(--honey-l)}
+  .done p{font-size:15px;color:rgba(255,255,255,0.85)}
+  textarea{min-height:110px}
+  @media (max-width:520px){h1{font-size:26px} .wrap{padding:18px 14px 14px} .card{padding:20px 16px} .sec{font-size:18px} textarea{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+<div class="wrap">
+  <div class="hero">
+    <h1>Leave your <em>details</em></h1>
+    <svg class="arrow" viewBox="0 0 84 96" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20 6c26 6 40 24 32 44-5 12-15 18-22 30"/>
+      <path d="M22 66l7 16 15-8"/>
+    </svg>
+  </div>
+
+  <form id="qc" novalidate>
+    <div class="card">
+      <p class="sec"><span class="disc">👋</span>Who are we chatting to?</p>
+      <div class="field">
+        <label class="l" for="name">Name</label>
+        <input id="name" autocomplete="name">
+      </div>
+      <div class="field">
+        <label class="l" for="phone">Phone</label>
+        <input id="phone" type="tel" autocomplete="tel" inputmode="tel">
+      </div>
+      <div class="field">
+        <label class="l" for="email">Email</label>
+        <input id="email" type="email" autocomplete="email" inputmode="email">
+      </div>
+      <div class="field" style="margin-bottom:0">
+        <label class="l" for="note">Notes</label>
+        <textarea id="note" placeholder="Anything else to note?"></textarea>
+      </div>
+    </div>
+
+    <button class="btn" type="submit" id="go">Send it over
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+    </button>
+    <p class="msg" id="msg"></p>
+  </form>
+
+  <div class="card done" id="done">
+    <div class="big">✓</div>
+    <h2>Lovely, that's <em>with us</em></h2>
+    <p>Ready for the next person in a moment.</p>
+  </div>
+</div>
+
+<script>
+  // Same GHL inbound webhook as the expo landing page form (Expo 2026 intake workflow)
+  var WEBHOOK = 'https://services.leadconnectorhq.com/hooks/J378Bt0d7JvG2rXks3zo/webhook-trigger/170126d0-9252-4280-b84d-5ec79c2bbd0c';
+  var form = document.getElementById('qc');
+  var done = document.getElementById('done');
+  var msg = document.getElementById('msg');
+  var go = document.getElementById('go');
+
+  function reset(){
+    form.reset();
+    msg.textContent = '';
+    done.style.display = 'none';
+    form.style.display = 'block';
+    go.disabled = false;
+    
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var note = document.getElementById('note').value.trim();
+    if(!phone && !email){
+      msg.textContent = 'Pop in a phone number or email so we can get back to them.';
+      return;
+    }
+    var parts = name.split(/\s+/);
+    var data = {
+      first_name: parts.shift() || '',
+      last_name: parts.join(' '),
+      email: email,
+      phone: phone,
+      message: note ? 'Note: ' + note : '',
+      source: 'Expo stand quick capture',
+      tag: 'expo stand quick capture',
+      page: 'expo-quick-capture'
+    };
+    go.disabled = true;
+    fetch(WEBHOOK, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)})
+      .then(function(r){ if(!r.ok) throw new Error('send failed'); })
+      .then(function(){
+        form.style.display = 'none';
+        done.style.display = 'block';
+        
+        setTimeout(reset, 3000);
+      }).catch(function(){
+        go.disabled = false;
+        msg.textContent = 'That did not send. Check the signal and tap again.';
+      });
+  });
+</script>
+</body>
+</html>
