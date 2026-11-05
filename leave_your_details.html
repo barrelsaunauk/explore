@@ -12,8 +12,8 @@
     --glass:rgba(22,38,28,0.55); --glass-2:rgba(255,255,255,0.10); --line:rgba(255,255,255,0.28);
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html,body{background:#16261C;overflow:hidden;height:auto;overscroll-behavior:none}
-  body{font-family:'Poppins',Arial,sans-serif;font-weight:400;color:#ffffff;-webkit-font-smoothing:antialiased;position:relative}
+  html,body{background:#16261C;overflow-x:hidden}
+  body{font-family:'Poppins',Arial,sans-serif;font-weight:400;color:#ffffff;-webkit-font-smoothing:antialiased;position:relative;min-height:100vh}
   .bg{position:absolute;inset:0;z-index:0;background:#16261C url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9e59fc506b5777477bf393.png') center/cover no-repeat}
   .bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,38,28,0.78) 0%,rgba(22,38,28,0.62) 40%,rgba(22,38,28,0.82) 100%)}
   .wrap{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:24px 18px 18px}
@@ -120,7 +120,6 @@
     done.style.display = 'none';
     form.style.display = 'block';
     go.disabled = false;
-    
   }
 
   form.addEventListener('submit', function(e){
@@ -150,7 +149,6 @@
       .then(function(){
         form.style.display = 'none';
         done.style.display = 'block';
-        
         setTimeout(reset, 3000);
       }).catch(function(){
         go.disabled = false;
