@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>In Stock Saunas | Barrel Sauna UK</title>
-<!-- in stock saunas v6 -->
+<!-- in stock saunas v7 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
@@ -29,8 +29,8 @@ h1,h2,h3{font-weight:700;line-height:1.15;letter-spacing:-.01em}
 .pill-wa svg{width:20px;height:20px;flex:none}
 
 /* HERO BANNER */
-.hero{position:relative;background:var(--ground);color:var(--white);height:clamp(380px,40vw,520px);overflow:hidden}
-.hero img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.hero{position:relative;background:var(--ground);color:var(--white);height:clamp(420px,52vw,90vh);overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:center 12%}
 .hero .veil{position:absolute;left:0;right:0;bottom:0;height:70%;background:linear-gradient(to top,rgba(22,38,28,.9) 0%,rgba(22,38,28,.5) 55%,rgba(22,38,28,0) 100%)}
 .hero .copy{position:absolute;left:0;right:0;bottom:0;padding:0 24px 44px}
 .hero .copy .inner{max-width:1160px;margin:0 auto}
@@ -38,7 +38,7 @@ h1,h2,h3{font-weight:700;line-height:1.15;letter-spacing:-.01em}
 .hero p{font-size:clamp(15px,1.4vw,18px);max-width:46ch;margin-bottom:22px;color:rgba(255,255,255,.9)}
 @media(max-width:720px){
   .hero{height:560px}
-  .hero img{object-position:center 45%}
+  .hero img{object-position:42% center}
   .hero .veil{height:85%;background:linear-gradient(to top,rgba(22,38,28,.94) 0%,rgba(22,38,28,.6) 55%,rgba(22,38,28,0) 100%)}
   .hero .copy{padding:0 22px 30px}
   .hero h1{font-size:32px}
@@ -69,7 +69,7 @@ h1,h2,h3{font-weight:700;line-height:1.15;letter-spacing:-.01em}
 .sauna.dark{background:var(--deep);color:var(--white)}
 
 /* photo banner at the top of each sauna */
-.sbanner{position:relative;height:clamp(300px,38vw,500px);overflow:hidden;background:var(--ground);color:var(--white)}
+.sbanner{position:relative;height:clamp(340px,48vw,88vh);overflow:hidden;background:var(--ground);color:var(--white)}
 .sbanner img{width:100%;height:100%;object-fit:cover;object-position:center 55%}
 .sbanner .veil{position:absolute;left:0;right:0;bottom:0;height:65%;background:linear-gradient(to top,rgba(22,38,28,.88) 0%,rgba(22,38,28,.4) 55%,rgba(22,38,28,0) 100%)}
 .sbanner .copy{position:absolute;left:0;right:0;bottom:0;padding:0 24px 40px}
@@ -96,6 +96,8 @@ h1,h2,h3{font-weight:700;line-height:1.15;letter-spacing:-.01em}
 .media{display:grid;gap:20px}
 .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.row3.small{gap:14px}
+.row3.small .shot .cap{font-size:11px;letter-spacing:.16em;padding:10px 14px}
 @media(max-width:720px){.row3,.row2{grid-template-columns:1fr}}
 
 /* globe and nomad: video beside the photos */
@@ -184,7 +186,7 @@ footer .note{text-align:center;font-size:13px;color:rgba(255,255,255,.6)}
 
 <!-- HERO BANNER -->
 <header class="hero">
-  <img src="https://files.leadconnectorhq.com/file/6af32c4f421749dec79e6848/gemini-generated-image-n0eol5n0eol5n0eo.jpeg" alt="Barrel Sauna UK saunas, built and ready">
+  <img src="in_stock_hero.png" alt="Our Caerphilly workshop from above, saunas built and ready">
   <div class="veil"></div>
   <div class="copy"><div class="inner">
     <div class="kicker">In stock now</div>
@@ -219,10 +221,10 @@ footer .note{text-align:center;font-size:13px;color:rgba(255,255,255,.6)}
 <!-- 1. THE WOODEN ROOF -->
 <section class="sauna">
   <div class="sbanner">
-    <img src="https://files.leadconnectorhq.com/file/6af6e388e3f654f61a6c704d/in-stock-wooden-roof.jpeg" alt="The Wooden Roof sauna">
+    <img src="https://files.leadconnectorhq.com/file/6af6e388e3f654f61a6c704d/in-stock-wooden-roof.jpeg" alt="The Wooden Roof sauna" style="object-position:center 45%">
     <div class="veil"></div>
     <div class="copy"><div class="inner">
-      <div class="kicker">Sauna one</div>
+      <div class="kicker">No. 1</div>
       <h2>The Wooden Roof</h2>
       <div class="tags"><span class="tag">4.8m</span><span class="tag">Fully off grid</span><span class="tag">Wood burning</span></div>
     </div></div>
@@ -270,14 +272,14 @@ footer .note{text-align:center;font-size:13px;color:rgba(255,255,255,.6)}
   </div>
 </section>
 
-<!-- 2. THE GLOBE -->
+<!-- 2. THE CLASSIC GLOBE -->
 <section class="sauna tint">
   <div class="sbanner">
-    <img src="https://files.leadconnectorhq.com/file/6af6cf582bb7bbb9e890496d/globe-liam-s-stone-house.png" alt="The Globe from above">
+    <img src="https://files.leadconnectorhq.com/file/6af6cf582bb7bbb9e890496d/globe-liam-s-stone-house.png" alt="The Classic Globe from above" style="object-position:center 25%">
     <div class="veil"></div>
     <div class="copy"><div class="inner">
-      <div class="kicker">Sauna two</div>
-      <h2>The Globe</h2>
+      <div class="kicker">No. 2</div>
+      <h2>The Classic Globe</h2>
       <div class="tags"><span class="tag">Blackout globe</span><span class="tag">Changing room</span></div>
     </div></div>
   </div>
@@ -289,9 +291,10 @@ footer .note{text-align:center;font-size:13px;color:rgba(255,255,255,.6)}
         <video controls playsinline preload="metadata" src="https://files.leadconnectorhq.com/file/6adfdf5467528ab6077a28a9/whatsapp-video-2026-10-27-at-00-30-06-1.mp4#t=0.1"></video>
         <div class="vid-label"><span>Take a look</span><span>Video</span></div>
       </div>
-      <div class="row2">
-        <div class="shot"><img src="https://files.leadconnectorhq.com/file/6af6cdfe2bb7bbb9e890263e/globe-in-stock-front-view.jpeg" alt="The Globe, rectangle door with two side windows"><div class="cap">Rectangle door with two side windows</div></div>
-        <div class="shot"><img src="https://files.leadconnectorhq.com/file/6af6fd5de066b14ab5d343f2/globe-twilight-in-stock.jpeg" alt="The Globe, solar panel and chimney"><div class="cap">Solar panel and chimney</div></div>
+      <div class="row3 small">
+        <div class="shot"><img src="https://files.leadconnectorhq.com/file/6af6cdfe2bb7bbb9e890263e/globe-in-stock-front-view.jpeg" alt="The Classic Globe, rectangle door with two side windows"><div class="cap">Rectangle door with two side windows</div></div>
+        <div class="shot"><img src="https://files.leadconnectorhq.com/file/6af6fd5de066b14ab5d343f2/globe-twilight-in-stock.jpeg" alt="The Classic Globe, solar panel and chimney"><div class="cap">Solar panel and chimney</div></div>
+        <div class="shot"><img src="https://files.leadconnectorhq.com/file/6af81ea1fdf6b54fd7196535/the-blackout-globe.jpg" alt="The Classic Globe, blackout globe window"><div class="cap">Blackout globe window</div></div>
       </div>
     </div>
 
@@ -317,7 +320,7 @@ footer .note{text-align:center;font-size:13px;color:rgba(255,255,255,.6)}
     </div>
 
     <div class="sauna-cta">
-      <a class="pill pill-wa" href="https://wa.me/447360274142?text=Hi%2C%20I%27m%20interested%20in%20the%20in-stock%20Globe%20sauna" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><use href="#wa"/></svg>Ask about the Globe</a>
+      <a class="pill pill-wa" href="https://wa.me/447360274142?text=Hi%2C%20I%27m%20interested%20in%20the%20in-stock%20Classic%20Globe%20sauna" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><use href="#wa"/></svg>Ask about the Classic Globe</a>
     </div>
   </div>
 </section>
@@ -328,7 +331,7 @@ footer .note{text-align:center;font-size:13px;color:rgba(255,255,255,.6)}
     <img src="https://files.leadconnectorhq.com/file/6af6bd7a4dccfd82daf36e7c/nomad-main-image.jpeg" alt="The Nomad mobile sauna on its trailer" style="object-position:center 62%">
     <div class="veil"></div>
     <div class="copy"><div class="inner">
-      <div class="kicker">Sauna three</div>
+      <div class="kicker">No. 3</div>
       <h2>The Nomad</h2>
       <div class="tags"><span class="tag">Mobile</span><span class="tag">4 to 5 people</span><span class="tag">Pre-owned</span></div>
     </div></div>
