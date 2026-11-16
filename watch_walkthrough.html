@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#16261C">
+  <title>Watch the walkthrough | Barrel Sauna UK</title>
+  <meta property="og:title" content="We've moved to a new showroom">
+  <meta property="og:description" content="James walks you through the new Barrel Sauna UK showroom.">
+  <meta property="og:image" content="https://files.leadconnectorhq.com/file/6afaebfc7c3b573a627bffd2/unit-walkthrough-video-screenshot.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; background: #16261C; }
+    body { font-family: Poppins, 'Avenir Next', Avenir, 'Century Gothic', Arial, sans-serif; color: #ffffff; overflow: hidden; }
+
+    /* Full bleed stage: fills the whole screen like a YouTube video */
+    .stage { position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100dvh; background: #16261C; }
+    .stage video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #16261C; }
+
+    /* Poster layer with the play button, removed once the video starts */
+    .cover { position: absolute; inset: 0; border: 0; padding: 0; margin: 0; cursor: pointer; background: #16261C url('https://files.leadconnectorhq.com/file/6afaebfc7c3b573a627bffd2/unit-walkthrough-video-screenshot.jpg') center center / contain no-repeat; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 14px; color: #ffffff; font: inherit; }
+    .cover::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 45%; background: linear-gradient(to bottom, rgba(22,38,28,0) 0%, rgba(22,38,28,0.85) 100%); pointer-events: none; }
+    .cover img { width: 96px; height: 96px; position: relative; z-index: 2; transition: transform .2s ease; }
+    .cover:hover img, .cover:focus-visible img { transform: scale(1.08); }
+    .cover small { position: relative; z-index: 2; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
+    .cover.gone { display: none; }
+
+    /* Headline sits bottom left over the veil, then fades once playing */
+    .caption { position: absolute; left: 0; bottom: 0; z-index: 3; padding: 0 32px 32px; max-width: 640px; pointer-events: none; transition: opacity .3s ease; }
+    .caption.gone { opacity: 0; }
+    .bug { display: inline-block; font-size: 0; margin-bottom: 12px; }
+    .bug span { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 2px; padding: 6px 14px; vertical-align: middle; }
+    .bug .b1 { background: #CC1A1A; color: #ffffff; border-radius: 3px 0 0 3px; }
+    .bug .b2 { background: #e8e8e8; color: #111111; border-radius: 0 3px 3px 0; }
+    .caption h1 { margin: 0 0 6px; font-size: 30px; line-height: 1.2; font-weight: 700; }
+    .caption h1 em { font-style: normal; color: #D6A868; }
+    .caption p { margin: 0; font-size: 15px; color: #dbe7dd; }
+
+    @media (max-width: 620px) {
+      .cover img { width: 80px; height: 80px; }
+      .caption { padding: 0 20px 24px; }
+      .caption h1 { font-size: 22px; }
+      .caption p { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stage">
+    <video id="vid" playsinline preload="metadata" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aeb0062e322309abfb107aa.mp4#t=0.1"></video>
+
+    <button class="cover" id="cover" type="button" aria-label="Play the showroom walkthrough">
+      <img src="https://files.leadconnectorhq.com/file/6afaef357c3b573a627c3ffe/play-cutout-88.png" alt="">
+      <small>Watch the walkthrough</small>
+    </button>
+
+    <div class="caption" id="caption">
+      <div class="bug"><span class="b1">BREAKING</span><span class="b2">NEWS</span></div>
+      <h1>We've moved to a <em>new showroom.</em></h1>
+      <p>Press play to hear it from James.</p>
+    </div>
+  </div>
+
+  <script>
+    // Tap the poster: hide it, show native controls, play with sound
+    (function () {
+      var v = document.getElementById('vid');
+      var c = document.getElementById('cover');
+      var cap = document.getElementById('caption');
+      c.addEventListener('click', function () {
+        c.classList.add('gone');
+        cap.classList.add('gone');
+        v.controls = true;
+        var p = v.play();
+        if (p && p.catch) { p.catch(function () { v.controls = true; }); }
+      });
+      // Bring the poster back when the video finishes
+      v.addEventListener('ended', function () {
+        v.controls = false;
+        v.currentTime = 0.1;
+        c.classList.remove('gone');
+        cap.classList.remove('gone');
+      });
+    })();
+  </script>
+
+</body>
+</html>
